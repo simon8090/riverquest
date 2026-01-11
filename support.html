@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>支持我們</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-6">
+  <div class="w-full max-w-xl bg-white border rounded-3xl p-6 shadow-sm">
+    <div class="text-2xl font-extrabold">💛 支持我們</div>
+    <div class="mt-2 text-slate-600">（Demo）可換成真實金流連結</div>
+
+    <div class="mt-5 grid grid-cols-3 gap-3">
+      <button class="py-4 rounded-2xl bg-amber-500 text-white font-extrabold text-lg hover:bg-amber-400" onclick="go(100)">NT$100</button>
+      <button class="py-4 rounded-2xl bg-amber-500 text-white font-extrabold text-lg hover:bg-amber-400" onclick="go(300)">NT$300</button>
+      <button class="py-4 rounded-2xl bg-amber-500 text-white font-extrabold text-lg hover:bg-amber-400" onclick="go(500)">NT$500</button>
+    </div>
+
+    <a href="./index.html" class="mt-6 inline-flex w-full justify-center py-4 rounded-2xl border font-extrabold text-lg hover:bg-slate-50">
+      回到查詢
+    </a>
+  </div>
+
+  <script>
+    function go(amount){
+      alert(`（Demo）已選 NT$${amount}，這裡改成你的金流連結即可。`);
+    }
+  </script>
+</body>
+</html>

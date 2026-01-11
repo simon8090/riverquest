@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>預約工作坊</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 flex items-center justify-center p-6">
+  <div class="w-full max-w-xl bg-white border rounded-3xl p-6 shadow-sm">
+    <div class="text-2xl font-extrabold">🧑‍🔧 預約工作坊</div>
+
+    <div class="mt-5 grid grid-cols-2 gap-3">
+      <input id="name" class="px-4 py-3 rounded-2xl border text-lg" placeholder="姓名"/>
+      <input id="phone" class="px-4 py-3 rounded-2xl border text-lg" placeholder="電話"/>
+      <input id="email" class="px-4 py-3 rounded-2xl border text-lg col-span-2" placeholder="Email"/>
+      <input id="addr" class="px-4 py-3 rounded-2xl border text-lg col-span-2" placeholder="地址"/>
+      <input id="time" class="px-4 py-3 rounded-2xl border text-lg col-span-2" placeholder="希望時段"/>
+    </div>
+
+    <button class="mt-4 w-full py-4 rounded-2xl bg-slate-900 text-white font-extrabold text-lg hover:bg-slate-800"
+            onclick="send()">
+      送出預約
+    </button>
+
+    <a href="./index.html" class="mt-4 inline-flex w-full justify-center py-4 rounded-2xl border font-extrabold text-lg hover:bg-slate-50">
+      回到查詢
+    </a>
+  </div>
+
+  <script>
+    const TO = "hello@example.com"; // ←改成你們信箱
+    function send(){
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const addr = document.getElementById("addr").value.trim();
+      const time = document.getElementById("time").value.trim();
+
+      const subject = encodeURIComponent("工作坊預約｜汙水接管/淨化槽評估");
+      const body = encodeURIComponent(`姓名：${name}\n電話：${phone}\nEmail：${email}\n地址：${addr}\n希望時段：${time}\n`);
+      window.location.href = `mailto:${TO}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
